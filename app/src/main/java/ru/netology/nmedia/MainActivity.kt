@@ -22,8 +22,7 @@ class MainActivity : AppCompatActivity() {
             likes = 9999,
             shares = 25999,
             views = 999999,
-            likedByMe = false,
-            sharedByMe = true
+            likedByMe = false
         )
 
 
@@ -33,11 +32,8 @@ class MainActivity : AppCompatActivity() {
             published.text = post.published
             content.text = post.content
             if (post.likedByMe) {
-                like?.setImageResource(R.drawable.ic_liked_24)
+                like.setImageResource(R.drawable.ic_liked_24)
             }
-            if (post.sharedByMe) (
-                    share.setImageResource(R.drawable.ic_share_24)
-                    )
 
 
             likeCount.text = formatNumber(post.likes)
@@ -74,6 +70,7 @@ class MainActivity : AppCompatActivity() {
                 post.views++
                 viewsCount.text = formatNumber(post.views)
             }
+
         }
     }
 }

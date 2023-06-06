@@ -17,7 +17,8 @@
         app:layout_constraintBottom_toBottomOf="@id/header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@sample/posts.json/data/authorAvatar" />
+        tools:srcCompat="@sample/posts.json/data/authorAvatar"
+        />
 
     <TextView
         android:id="@+id/author"
@@ -146,7 +147,7 @@
         android:id="@+id/viewsCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5"
+        tools:text="5"
         android:layout_marginStart="@dimen/text_spacing"
         android:layout_marginTop="@dimen/common_spacing"
         app:layout_constraintTop_toBottomOf="@id/footer"
