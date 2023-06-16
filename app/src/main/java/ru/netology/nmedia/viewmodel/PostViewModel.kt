@@ -40,6 +40,10 @@ class PostViewModel : ViewModel() {
 
     }
 
+    fun undoEditing() {
+        edited.value = empty
+    }
+
 
     fun changeContent(content: String) {
         val text = content.trim()

@@ -64,29 +64,29 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.save.setOnClickListener {
-                with(binding.content) {
-                    if (text.isNullOrBlank()) {
-                        Toast.makeText(
-                            this@MainActivity,
-                            context.getString(R.string.error_empty_content),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        return@setOnClickListener
-                    }
-                    viewModel.changeContent(text.toString())
-                    viewModel.save()
-
-
-                    setText("")
-                    clearFocus()
-                    binding.group.visibility = View.GONE
-                    AndroidUtils.hideKeyboard(this)
+            with(binding.content) {
+                if (text.isNullOrBlank()) {
+                    Toast.makeText(
+                        this@MainActivity,
+                        context.getString(R.string.error_empty_content),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    return@setOnClickListener
                 }
+                viewModel.changeContent(text.toString())
+                viewModel.save()
+
+
+                setText("")
+                clearFocus()
+                binding.group.visibility = View.GONE
+                AndroidUtils.hideKeyboard(this)
             }
+        }
 
         binding.undoEditing.setOnClickListener {
             with(binding.content) {
-
+                viewModel.undoEditing()
                 setText("")
                 clearFocus()
                 binding.group.visibility = View.GONE
@@ -96,5 +96,5 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        }
     }
+}
