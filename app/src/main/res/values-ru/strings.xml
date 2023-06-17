@@ -13,4 +13,6 @@
     <string name="description_undo_editing">Отмена редактирования</string>
     <string name="description_post_view">Просмотр поста</string>
     <string name="description_post_edit">Редактирование поста</string>
+    <string name="post_likeCount">Количество лайков поста</string>
+    <string name="post_shareCount">Количество share поста</string>
 </resources>

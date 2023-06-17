@@ -12,4 +12,6 @@
     <string name="description_undo_editing">Undo editing</string>
     <string name="description_post_view">Post view</string>
     <string name="description_post_edit">Post edit</string>
+    <string name="post_likeCount">Post likeCount</string>
+    <string name="post_shareCount">Post shareCount</string>
 </resources>
