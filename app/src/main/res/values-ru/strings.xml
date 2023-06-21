@@ -14,5 +14,9 @@
     <string name="description_post_view">Просмотр поста</string>
     <string name="description_post_edit">Редактирование поста</string>
     <string name="post_likeCount">Количество лайков поста</string>
-    <string name="post_shareCount">Количество share поста</string>
+    <string name="post_shareCount">Количество отправок поста</string>
+    <string name="chooser_share_post">Поделиться постом</string>
+    <string name="add_post">Добавление поста</string>
+    <string name="description_post_video_cover">Обложка видео</string>
+    <string name="description_play_button">Проигрывание видео</string>
 </resources>

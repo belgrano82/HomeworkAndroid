@@ -18,6 +18,7 @@ interface OnInteractionListener {
     fun onShare(post: Post)
     fun onEdit(post: Post)
     fun onRemove(post: Post)
+    fun onPlay(post: Post)
 
 }
 
@@ -48,8 +49,14 @@ class PostViewHolder(
             share.text = formatNumber(post.shares)
             viewsCount.text = formatNumber(post.views)
             binding.author.text = post.author
+            if (!post.video.isNullOrBlank()) {
+                group.visibility = View.VISIBLE
 
+            }
 
+            play.setOnClickListener {
+                onInteractionListener.onPlay(post)
+            }
             like.isChecked = post.likedByMe
 
 
@@ -81,12 +88,8 @@ class PostViewHolder(
                     }
                 }.show()
             }
-
-
         }
     }
-
-
 }
 
 class PostDiffCallback : DiffUtil.ItemCallback<Post>() {

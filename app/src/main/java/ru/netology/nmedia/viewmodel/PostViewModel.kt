@@ -1,10 +1,7 @@
 package ru.netology.nmedia.viewmodel
 
-import android.view.View
-import android.widget.ImageButton
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ru.netology.nmedia.R
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.repository.PostRepository
 import ru.netology.nmedia.repository.PostRepositoryInMemoryImpl
@@ -17,7 +14,8 @@ private val empty = Post(
     published = "",
     likes = 0,
     shares = 0,
-    views = 0
+    views = 0,
+    video = ""
 
 )
 

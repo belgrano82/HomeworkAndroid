@@ -14,4 +14,8 @@
     <string name="description_post_edit">Post edit</string>
     <string name="post_likeCount">Post likeCount</string>
     <string name="post_shareCount">Post shareCount</string>
+    <string name="chooser_share_post">Share post</string>
+    <string name="add_post">Add post</string>
+    <string name="description_post_video_cover">Video cover</string>
+    <string name="description_play_button">Play button</string>
 </resources>
