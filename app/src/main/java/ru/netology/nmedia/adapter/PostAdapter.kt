@@ -49,10 +49,7 @@ class PostViewHolder(
             share.text = formatNumber(post.shares)
             viewsCount.text = formatNumber(post.views)
             binding.author.text = post.author
-            if (!post.video.isNullOrBlank()) {
-                group.visibility = View.VISIBLE
-
-            }
+            group.visibility = if (post.video.isNullOrBlank()) View.GONE else View.VISIBLE
 
             play.setOnClickListener {
                 onInteractionListener.onPlay(post)
