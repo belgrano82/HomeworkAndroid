@@ -11,6 +11,7 @@ import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.dto.formatNumber
+import java.util.Calendar
 
 
 interface OnInteractionListener {
@@ -43,7 +44,7 @@ class PostViewHolder(
     fun bind(post: Post) {
         binding.apply {
             author.text = post.author
-            published.text = post.published
+            published.text = post.published.toString()
             content.text = post.content
             like.text = formatNumber(post.likes)
             share.text = formatNumber(post.shares)
