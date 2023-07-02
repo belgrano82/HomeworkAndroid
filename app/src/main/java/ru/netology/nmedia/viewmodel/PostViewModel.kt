@@ -9,16 +9,9 @@ import ru.netology.nmedia.repository.PostRepositoryFileImpl
 import java.util.Calendar
 
 private val empty = Post(
-    id = 0,
-    content = "",
-    author = "",
-    likedByMe = false,
+    id = 0, content = "", author = "", likedByMe = false,
 
-    likes = 0,
-    shares = 0,
-    views = 0,
-    video = "",
-    published = null
+    likes = 0, shares = 0, views = 0, video = "", published = null
 
 )
 
@@ -37,8 +30,6 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
 
     fun edit(post: Post) {
         edited.value = post
-
-
     }
 
     fun undoEditing() {
@@ -57,6 +48,8 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
 
     fun likeById(id: Long) = repository.likeById(id)
     fun shareById(id: Long) = repository.shareById(id)
+
+    fun findById(id: Long): Post? = repository.findById(id)
 
     fun removeById(id: Long) = repository.removeById(id)
 

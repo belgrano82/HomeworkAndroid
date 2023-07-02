@@ -5,9 +5,9 @@ import java.util.Date
 
 
 data class Post(
-    val id: Long,
+    var id: Long,
     val author: String,
-    val content: String,
+    var content: String,
     val published: Date? = Calendar.getInstance().time,
     val likes: Int,
     val shares: Int,

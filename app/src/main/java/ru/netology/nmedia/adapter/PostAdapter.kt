@@ -4,6 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +15,6 @@ import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.dto.formatNumber
-import java.util.Calendar
 
 
 interface OnInteractionListener {
@@ -20,6 +23,7 @@ interface OnInteractionListener {
     fun onEdit(post: Post)
     fun onRemove(post: Post)
     fun onPlay(post: Post)
+    fun onViewPost(post: Post)
 
 }
 
@@ -65,6 +69,14 @@ class PostViewHolder(
             share.setOnClickListener {
                 onInteractionListener.onShare(post)
             }
+
+
+            listOf(content, avatar, avatarVideo, published, author).forEach {
+                it.setOnClickListener {
+                    onInteractionListener.onViewPost(post)
+                }
+            }
+
 
             menu.setOnClickListener {
                 PopupMenu(it.context, it).apply {
