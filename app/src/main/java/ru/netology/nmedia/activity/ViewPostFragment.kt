@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.FragmentViewPostBinding
 import ru.netology.nmedia.dto.formatNumber
+import ru.netology.nmedia.util.StringArg
 import ru.netology.nmedia.viewmodel.PostViewModel
 
 class ViewPostFragment : Fragment() {
@@ -22,6 +23,9 @@ class ViewPostFragment : Fragment() {
     )
 
 
+    companion object {
+        var Bundle.textArg: String? by StringArg
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {

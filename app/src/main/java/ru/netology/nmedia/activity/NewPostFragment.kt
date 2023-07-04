@@ -36,7 +36,18 @@ class NewPostFragment : Fragment() {
             false
         )
 
-        binding.edit.setText(requireArguments().getString("postContent"))
+        arguments?.textArg
+            ?.let(binding.edit::setText)
+
+
+val content = arguments?.getString("postContent")
+        binding.apply {
+            if (content != null) {
+                edit.setText(content)
+            }
+        }
+
+
 
         binding.cancel.setOnClickListener {
             viewModel.undoEditing()
