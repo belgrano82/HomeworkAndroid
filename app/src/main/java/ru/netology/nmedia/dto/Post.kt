@@ -10,7 +10,7 @@ data class Post(
     var content: String,
     val published: Date? = Calendar.getInstance().time,
     val likes: Int,
-    val shares: Int,
+    var shares: Int,
     val views: Int,
     val likedByMe: Boolean,
     val video: String? = null

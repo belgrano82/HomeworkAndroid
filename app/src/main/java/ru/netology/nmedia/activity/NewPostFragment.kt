@@ -1,6 +1,5 @@
 package ru.netology.nmedia.activity
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +7,6 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
-import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nmedia.databinding.FragmentNewPostBinding
@@ -38,11 +36,7 @@ class NewPostFragment : Fragment() {
             false
         )
 
-
-        setFragmentResultListener("editText") { editText, bundle ->
-            val result = bundle.getString("textEdit")
-            binding.edit.setText(result)
-        }
+        binding.edit.setText(requireArguments().getString("postContent"))
 
         binding.cancel.setOnClickListener {
             viewModel.undoEditing()
@@ -52,8 +46,8 @@ class NewPostFragment : Fragment() {
 
         binding.ok.setOnClickListener {
             viewModel.changeContent(binding.edit.text.toString())
-
             viewModel.save()
+
             val result2 = binding.edit.text
             setFragmentResult("editText2", bundleOf("textEdit2" to result2))
             AndroidUtils.hideKeyboard(requireView())

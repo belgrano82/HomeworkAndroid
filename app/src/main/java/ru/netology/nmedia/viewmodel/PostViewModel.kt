@@ -6,13 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.repository.PostRepository
 import ru.netology.nmedia.repository.PostRepositoryFileImpl
-import java.util.Calendar
 
 private val empty = Post(
     id = 0, content = "", author = "", likedByMe = false,
-
     likes = 0, shares = 0, views = 0, video = "", published = null
-
 )
 
 class PostViewModel(application: Application) : AndroidViewModel(application) {
